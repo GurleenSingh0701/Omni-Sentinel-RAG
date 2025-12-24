@@ -86,10 +86,3 @@ The system was validated against two distinct query types to prove the routing l
 | **Quantitative** | "What was the Q4 revenue?" | `table_path` | Precise Tabular Data |
 
 ---
-
-## 💼 Why this is "MAANG-Level"
-
-* **Modular Design:** Separates retrieval logic from generation, allowing for easy scaling (e.g., adding a SQL or Web Search node).
-* **Cost Optimization:** Demonstrates ability to architect enterprise solutions that bypass expensive token costs.
-* **Deterministic Logic:** Uses a Graph-State approach, ensuring the agent doesn't "get lost" in a loop, a common failure in autonomous agents.
----
