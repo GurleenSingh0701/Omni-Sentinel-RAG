@@ -1,0 +1,18 @@
+[project]
+name = "omni-sentinel-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arize-phoenix[all,langchain]>=12.26.0",
+    "langchain>=1.2.0",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.5",
+    "langchain-ollama>=1.0.1",
+    "langgraph>=1.0.5",
+    "openinference-instrumentation-langchain>=0.1.57",
+    "phoenix>=0.9.1",
+    "pydantic>=2.12.5",
+    "unstructured[pdf]>=0.18.21",
+]
