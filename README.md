@@ -1,8 +1,3 @@
-To make your `README.md` look professional and stand out on GitHub, you need to use clean Markdown formatting, structured headings, and visual diagrams.
-
-Here is the exact code for your `README.md`. Copy the entire block below and paste it into your file:
-
-```markdown
 # 🛡️ Omni-Sentinel RAG
 **An Agentic, Zero-Cost Retrieval System for Structured & Unstructured Data**
 
