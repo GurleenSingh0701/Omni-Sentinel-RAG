@@ -1,0 +1,16 @@
+{
+  "index": 3,
+  "id": "vector_003",
+  "category": "vector",
+  "query": "What are the roadmap themes mentioned in the company overview?",
+  "expected_route": "vector",
+  "actual_route": "vector",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "f4f2f095-7cb5-473e-9d82-103f5fa707c5",
+  "latency_ms": 5623.96,
+  "response": "According to the provided context, the roadmap themes for Omni-Sentinel Analytics are:\n\n*   Agentic workflow templates for SOC runbooks\n*   Policy-aware retrieval controls for regulated datasets\n*   Better multilingual retrieval for APAC and EMEA teams\n*   Native dashboard exports for finance and compliance reviews",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

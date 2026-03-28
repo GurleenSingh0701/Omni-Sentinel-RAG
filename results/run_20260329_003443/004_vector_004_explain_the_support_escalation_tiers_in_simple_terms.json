@@ -1,0 +1,16 @@
+{
+  "index": 4,
+  "id": "vector_004",
+  "category": "vector",
+  "query": "Explain the support escalation tiers in simple terms.",
+  "expected_route": "vector",
+  "actual_route": "vector",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "8173c330-8129-4ed7-a448-f29c7dbbac15",
+  "latency_ms": 14737.3,
+  "response": "Okay, here’s an explanation of the support escalation tiers for Omni-Sentinel Analytics, explained simply:\n\n“When you contact support, we have different levels of response times depending on how urgent your issue is. Here's how it works:\n\n*   **P1 (Priority 1):** These are the most critical issues – things that are completely blocking users from working. We aim to respond to these immediately, with an initial answer within just **30 minutes**.\n*   **P2 (Priority 2):** This is for important problems that are impacting your work but aren’t a complete standstill. You can expect an initial response within **2 hours**.\n*   **P3 (Priority 3):** These are less urgent issues. We'll get back to you with an initial answer within **8 business hours**.”\n\nEssentially, the faster you need help, the quicker we’ll respond!",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

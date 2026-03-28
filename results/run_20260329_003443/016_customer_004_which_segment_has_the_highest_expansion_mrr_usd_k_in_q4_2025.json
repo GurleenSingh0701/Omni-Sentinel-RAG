@@ -1,0 +1,16 @@
+{
+  "index": 16,
+  "id": "customer_004",
+  "category": "customers",
+  "query": "Which segment has the highest expansion_mrr_usd_k in Q4 2025?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "119be046-e2aa-48fc-9870-7671a4e586a4",
+  "latency_ms": 5477.63,
+  "response": "Based on the provided data, the **Enterprise** segment has the highest expansion_mrr_usd_k in Q4 2025 with a value of 179.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

@@ -1,0 +1,16 @@
+{
+  "index": 21,
+  "id": "baseline_002",
+  "category": "baseline",
+  "query": "What numbers are present in the data?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "fallback",
+  "request_id": "5544c088-d80c-4d29-a5ea-ecb1187fc245",
+  "latency_ms": 181445.62,
+  "response": "I could not reach the local model server. Please verify LM Studio is running and try again.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

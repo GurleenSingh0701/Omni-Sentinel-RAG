@@ -1,0 +1,16 @@
+{
+  "index": 6,
+  "id": "finance_002",
+  "category": "finance",
+  "query": "Compare Q4 2024 vs Q4 2025 revenue and new customers.",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "f5c40487-09ff-46a4-a2ac-a9ce62fa0a11",
+  "latency_ms": 15362.1,
+  "response": "Here's a comparison of Q4 2024 versus Q4 2025 based on the provided data:\n\n**Revenue:**\n\n*   **Q4 2024:** $5.1 million (growth of 9.4%)\n*   **Q4 2025:** $5.8 million (growth of 8.9%)\n\nWhile Q4 2024 revenue experienced a strong growth of 9.4%, the growth in Q4 2025 was slightly lower at 8.9%.\n\n**New Customers:**\n\n*   **Q4 2024:** 118 new customers\n*   **Q4 2025:** 142 new customers\n\nQ4 2025 saw a significant increase in new customers, with a jump of 24 compared to Q4 2024.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

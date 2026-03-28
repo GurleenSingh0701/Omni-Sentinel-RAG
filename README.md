@@ -158,6 +158,7 @@ uv sync
 uv run python main.py run --query "What was the Q4 revenue?"
 uv run python main.py health_check
 uv run python main.py smoke_test
+uv run python run_all_queries.py
 ```
 
 ### API
@@ -206,6 +207,12 @@ docker run -p 8000:8000 --env-file .env omni-sentinel-rag
 - `TABULAR_DATA_FILE`
 - `TABULAR_DATA_FILES` (preferred multi-table mode)
 
+### Router Tuning Keys
+- `TABULAR_KEYWORDS`
+- `TABULAR_METRIC_KEYWORDS`
+
+If route accuracy drops in batch runs, expand the tabular keyword sets with domain terms used in your query catalog.
+
 ## Evaluation and CI
 
 Run CI-like local regression:
@@ -218,6 +225,25 @@ uv run python main.py smoke_test \
     --max-p95-ms 1000 \
     --report-file eval_report.json
 ```
+
+Run all catalog queries and store outputs in `results/`:
+
+```bash
+uv run python run_all_queries.py
+```
+
+Custom query file and output folder:
+
+```bash
+uv run python run_all_queries.py --query-file queries/all_queries.json --output-dir results
+```
+
+Generated artifacts per run:
+
+- `results/run_<timestamp>/all_results.json`
+- `results/run_<timestamp>/evaluation_summary.json`
+- `results/run_<timestamp>/evaluation_summary.md`
+- `results/run_<timestamp>/<index>_<id>_<slug>.json` (per-query output)
 
 CI pipeline in `.github/workflows/regression.yml` runs:
 1. route regression smoke checks

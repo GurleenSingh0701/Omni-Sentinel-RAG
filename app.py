@@ -52,6 +52,7 @@ class AppConfig:
     llm_timeout_seconds: int
     llm_max_retries: int
     tabular_keywords: tuple[str, ...]
+    tabular_metric_keywords: tuple[str, ...]
     startup_healthcheck: bool
     fallback_response: str
     vector_context_file: str
@@ -70,8 +71,18 @@ class AppConfig:
 
     @staticmethod
     def from_env() -> "AppConfig":
-        raw_keywords = os.getenv("TABULAR_KEYWORDS", "revenue,table,data,numbers")
+        raw_keywords = os.getenv(
+            "TABULAR_KEYWORDS",
+            "revenue,table,data,numbers,quarter,quarters,q1,q2,q3,q4,year,years",
+        )
         parsed_keywords = tuple(k.strip().lower() for k in raw_keywords.split(",") if k.strip())
+        raw_metric_keywords = os.getenv(
+            "TABULAR_METRIC_KEYWORDS",
+            "revenue,growth,customer,customers,renewal,margin,sla,incident,incidents,mttr,mtta,false_positive,nps,churn,segment,expansion_mrr,rate,pct,percent,kpi,trend,compare",
+        )
+        parsed_metric_keywords = tuple(
+            k.strip().lower() for k in raw_metric_keywords.split(",") if k.strip()
+        )
         default_tabular_catalog = (
             "data/revenue.csv",
             "data/incidents.csv",
@@ -92,6 +103,31 @@ class AppConfig:
             llm_timeout_seconds=_env_int("LLM_TIMEOUT_SECONDS", 60),
             llm_max_retries=_env_int("LLM_MAX_RETRIES", 2),
             tabular_keywords=parsed_keywords or ("revenue", "table", "data", "numbers"),
+            tabular_metric_keywords=parsed_metric_keywords
+            or (
+                "revenue",
+                "growth",
+                "customer",
+                "customers",
+                "renewal",
+                "margin",
+                "sla",
+                "incident",
+                "incidents",
+                "mttr",
+                "mtta",
+                "false_positive",
+                "nps",
+                "churn",
+                "segment",
+                "expansion_mrr",
+                "rate",
+                "pct",
+                "percent",
+                "kpi",
+                "trend",
+                "compare",
+            ),
             startup_healthcheck=_env_bool("STARTUP_HEALTHCHECK", False),
             fallback_response=os.getenv(
                 "FALLBACK_RESPONSE",
@@ -257,9 +293,15 @@ def semantic_router(state: AgentState):
     request_id = state.get("request_id", "")
     log_event("router.start", request_id=request_id)
     q = state["query"].lower()
-    
-    # Intelligent routing logic
-    if any(word in q for word in settings.tabular_keywords):
+
+    has_tabular_keyword = any(word in q for word in settings.tabular_keywords)
+    has_metric_keyword = any(word in q for word in settings.tabular_metric_keywords)
+    has_quarter_hint = re.search(r"\bq[1-4]\b", q) is not None
+    has_year_hint = re.search(r"\b20\d{2}\b", q) is not None
+
+    # Route to tabular if explicit keyword is present or if query references
+    # time-sliced metrics (e.g., quarter/year + business metric language).
+    if has_tabular_keyword or (has_metric_keyword and (has_quarter_hint or has_year_hint)):
         log_event("router.decision", request_id=request_id, decision="tabular")
         return {"decision": "tabular"}
     

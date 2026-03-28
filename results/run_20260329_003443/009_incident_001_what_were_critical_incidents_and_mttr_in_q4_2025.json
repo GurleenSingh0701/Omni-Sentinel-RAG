@@ -1,0 +1,16 @@
+{
+  "index": 9,
+  "id": "incident_001",
+  "category": "incidents",
+  "query": "What were critical incidents and MTTR in Q4 2025?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "cc35dd67-2e3a-4555-ba69-0670fb3cd4c9",
+  "latency_ms": 3873.53,
+  "response": "Based on the provided \"Incidents\" data:\n\n*   **Critical Incidents:** 19\n*   **MTTR (min):** 16",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

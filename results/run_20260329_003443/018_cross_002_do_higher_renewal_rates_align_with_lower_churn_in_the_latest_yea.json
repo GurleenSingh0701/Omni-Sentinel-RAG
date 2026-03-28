@@ -1,0 +1,16 @@
+{
+  "index": 18,
+  "id": "cross_002",
+  "category": "cross-table",
+  "query": "Do higher renewal rates align with lower churn in the latest year?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "b4178bdd-d2e7-4b0f-ba52-63711d57da73",
+  "latency_ms": 21840.4,
+  "response": "Let's analyze the data from 2025 (Q4) to determine if higher renewal rates align with lower churn.\n\n**Renewal Rates (2025 Q4):** 97.8%\n**Churn Rate (2025 Q4):** 2.5%\n\nNow let's compare this to the previous year’s data:\n\n**Renewal Rates (2024 Q4):** 95.3%\n**Churn Rate (2024 Q4):** 2.8%\n\nAs you can see, in 2025 Q4, the renewal rate increased to 97.8%, while the churn rate decreased to 2.5%.  This indicates a positive correlation between higher renewal rates and lower churn.\n\n",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

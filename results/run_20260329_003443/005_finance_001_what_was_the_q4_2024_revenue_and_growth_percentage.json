@@ -1,0 +1,16 @@
+{
+  "index": 5,
+  "id": "finance_001",
+  "category": "finance",
+  "query": "What was the Q4 2024 revenue and growth percentage?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "faa6bc3a-b31a-4b62-b0ac-5f0ead325b95",
+  "latency_ms": 3082.2,
+  "response": "According to the provided data, the Q4 2024 revenue was $5.1 million with a growth percentage of 9.4%.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

@@ -1,0 +1,16 @@
+{
+  "index": 20,
+  "id": "baseline_001",
+  "category": "baseline",
+  "query": "What is Omni-Sentinel?",
+  "expected_route": "vector",
+  "actual_route": "vector",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "b6679cec-acb0-48d5-9fd0-7209a8f1d15d",
+  "latency_ms": 21867.68,
+  "response": "Omni-Sentinel is an AI-powered security intelligence platform that provides a RAG assistant for documentation and reporting. It’s used by Enterprise SOC teams, financial services risk operations, managed security service providers, and public sector digital forensics units. The core product, the Omni-Sentinel RAG assistant, routes questions to semantic retrieval or tabular extraction depending on the nature of the query. It comes with a suite of products including Sentinel Core, Sentinel TableOps, Sentinel Watchtower, and Sentinel Trace, all designed to enhance security operations and reporting. Importantly, it utilizes file-backed synthetic context to avoid real company data leakage and includes features like verification mode and guardrails for enhanced accuracy and control.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

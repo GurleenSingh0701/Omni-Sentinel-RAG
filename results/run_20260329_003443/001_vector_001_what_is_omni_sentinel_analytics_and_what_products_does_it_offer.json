@@ -1,0 +1,16 @@
+{
+  "index": 1,
+  "id": "vector_001",
+  "category": "vector",
+  "query": "What is Omni-Sentinel Analytics and what products does it offer?",
+  "expected_route": "vector",
+  "actual_route": "vector",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "40d4b993-541c-48f0-ba95-51d3134b8f53",
+  "latency_ms": 8601.07,
+  "response": "Omni-Sentinel Analytics is a synthetic example company used for local RAG development and internal testing workflows. It’s an AI-powered security intelligence platform specializing in documentation and reporting.\n\nHere's a breakdown of the products they offer:\n\n*   **Omni-Sentinel RAG assistant:** Their core product, designed for documentation and reporting.\n*   **Sentinel Core:** Handles query routing and answer synthesis.\n*   **Sentinel TableOps:** Performs tabular analytics and KPI extraction.\n*   **Sentinel Watchtower:** Acts as an incident triage copilot.\n*   **Sentinel Trace:** Provides observability and audit reporting.\n\nThey offer these products under different deployment models – on-prem, private cloud, and hybrid managed services – targeting business segments like Enterprise SOC teams, Financial Services risk operations, Managed Security Service Providers, and Public sector digital forensics units.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

@@ -1,0 +1,16 @@
+{
+  "index": 15,
+  "id": "customer_003",
+  "category": "customers",
+  "query": "What is the NPS trend for Enterprise from 2022 Q1 to 2025 Q4?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "ea6cf2de-1c6a-4a89-b97a-8e13588b912b",
+  "latency_ms": 19370.96,
+  "response": "Here's the breakdown of the NPS score for the Enterprise segment from 2022 Q1 to 2025 Q4, based on the provided data:\n\n*   **2022 Q1:** 47\n*   **2022 Q4:** 50\n*   **2023 Q4:** 53\n*   **2024 Q4:** 56\n*   **2025 Q4:** 60\n\nTherefore, the NPS trend for Enterprise from 2022 Q1 to 2025 Q4 is a consistent upward trend, increasing from 47 to 60.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

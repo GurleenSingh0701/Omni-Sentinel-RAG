@@ -1,0 +1,16 @@
+{
+  "index": 17,
+  "id": "cross_001",
+  "category": "cross-table",
+  "query": "For Q4 2025, summarize revenue, critical incidents, and enterprise NPS in one answer.",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "4d16de59-8ec3-412f-a781-2ba7fd948072",
+  "latency_ms": 10730.65,
+  "response": "In Q4 2025, revenue reached $5.8 million with a growth of 9.4%, driven by global performance. Critical incidents decreased to 19 with an average P1 MTTA of 19 minutes and a high auto-resolved rate of 58.9%. The enterprise segment achieved an NPS score of 60, indicating strong customer satisfaction.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

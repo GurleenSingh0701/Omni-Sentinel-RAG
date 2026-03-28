@@ -1,0 +1,16 @@
+{
+  "index": 12,
+  "id": "incident_004",
+  "category": "incidents",
+  "query": "Compare false_positive_pct between 2023 Q4 and 2025 Q4.",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "40e1ca40-4384-4bec-bbe5-0b006c6acdd4",
+  "latency_ms": 13772.17,
+  "response": "Here's the comparison of `false_positive_pct` between 2023 Q4 and 2025 Q4 based on the provided data:\n\n*   **2023 Q4:** `false_positive_pct` = 9.8%\n*   **2025 Q4:** `false_positive_pct` = 7.6%\n\nTherefore, the `false_positive_pct` was lower in 2025 Q4 compared to 2023 Q4.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

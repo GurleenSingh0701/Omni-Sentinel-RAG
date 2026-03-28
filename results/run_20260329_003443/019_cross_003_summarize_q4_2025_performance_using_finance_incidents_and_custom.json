@@ -1,0 +1,16 @@
+{
+  "index": 19,
+  "id": "cross_003",
+  "category": "cross-table",
+  "query": "Summarize Q4 2025 performance using finance, incidents, and customer metrics.",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "6f316634-05da-4d4d-ad1b-322ee9fc63bc",
+  "latency_ms": 51770.52,
+  "response": "Here’s a summary of Q4 2025 performance based on the provided data:\n\n**Finance:**\n\n*   **Revenue:** Revenue reached $5.8 million, representing a significant growth of 9.4% compared to the previous quarter. This indicates continued positive momentum in sales.\n*   **Operating Margin:** The operating margin increased to 27.0%, reflecting improved operational efficiency and profitability.\n\n\n**Incidents:**\n\n*   **Overall Trend:** There’s a clear downward trend in incident volume and severity throughout 2025, continuing into Q4.\n*   **Specific Metrics:** Critical incidents decreased to 19, P1 MTTA (Mean Time To Acknowledge) dropped to 19 minutes, P1 MTTR (Mean Time To Resolve) fell to 82 minutes, and the auto-resolved percentage rose to 58.9%. False positive percentages also declined to 7.9%, suggesting improved monitoring accuracy.\n\n\n\n**Customers:**\n\n*   **Active Customers:** The total number of active customers increased significantly across all segments, with SMB reaching 448, Mid-Market at 264, and Enterprise at 173.\n*   **New Logos & Expansion MRR:** There was a strong increase in both new logos (56) and expansion MRR ($92k), indicating successful customer acquisition and upselling efforts.\n*   **Churn Rate:** The churn rate decreased to 2.5%, demonstrating improved customer retention.\n*   **NPS Score:**  The Net Promoter Score increased to 60, signifying higher levels of customer satisfaction and loyalty.\n\n**Overall Impression:** Q4 2025 represents a strong period for the company, characterized by robust revenue growth, significant improvements in operational efficiency (as measured by incident metrics), and substantial gains in customer acquisition, expansion, and retention.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

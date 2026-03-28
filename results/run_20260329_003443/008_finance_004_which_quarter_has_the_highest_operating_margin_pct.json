@@ -1,0 +1,16 @@
+{
+  "index": 8,
+  "id": "finance_004",
+  "category": "finance",
+  "query": "Which quarter has the highest operating_margin_pct?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "0dc8288a-b415-41ba-81b3-a8bb3bec7fb9",
+  "latency_ms": 3698.6,
+  "response": "Based on the provided data, **Q4 in 2024** has the highest operating\\_margin\\_pct at 25.0%.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

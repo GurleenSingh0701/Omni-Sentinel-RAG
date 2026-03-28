@@ -1,0 +1,16 @@
+{
+  "index": 14,
+  "id": "customer_002",
+  "category": "customers",
+  "query": "Compare churn_rate_pct across SMB, Mid-Market, and Enterprise in Q4 2025.",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "c5b19809-d022-44f9-8675-bb2b6278d6af",
+  "latency_ms": 12716.24,
+  "response": "Here's a comparison of churn\\_rate\\_pct across SMB, Mid-Market, and Enterprise in Q4 2025 based on the provided data:\n\n*   **SMB:** 3.4%\n*   **Mid-Market:** 2.9%\n*   **Enterprise:** 2.5%\n\nTherefore, Enterprise had the lowest churn rate in Q4 2025, followed by Mid-Market and then SMB.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

@@ -26,6 +26,11 @@ This folder contains project documentation for architecture, operations, onboard
 - Tabular context now includes finance, incident operations, and customer segment views.
 - All values are synthetic and safe for local development and demonstrations.
 
+## Query Catalog
+
+- Batch query file: `../queries/all_queries.json`
+- Batch runner: `../run_all_queries.py`
+
 ## Suggested Reading Order
 
 1. `ARCHITECTURE.md`

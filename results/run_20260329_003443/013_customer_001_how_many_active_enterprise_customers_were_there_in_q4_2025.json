@@ -1,0 +1,16 @@
+{
+  "index": 13,
+  "id": "customer_001",
+  "category": "customers",
+  "query": "How many active enterprise customers were there in Q4 2025?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "07b52f35-e2aa-4d7a-a665-db37176cd4e7",
+  "latency_ms": 3475.06,
+  "response": "According to the provided data, there were 173 active enterprise customers in Q4 2025.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

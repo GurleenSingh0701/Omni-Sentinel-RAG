@@ -1,0 +1,16 @@
+{
+  "index": 11,
+  "id": "incident_003",
+  "category": "incidents",
+  "query": "Which quarter has the best auto_resolved_pct?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "38212de6-0dce-45fe-bbc0-8d6c9bd4660a",
+  "latency_ms": 3783.86,
+  "response": "Based on the provided data, **2025 Q4** has the highest `auto_resolved_pct` at 65.0%.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

@@ -1,0 +1,16 @@
+{
+  "index": 10,
+  "id": "incident_002",
+  "category": "incidents",
+  "query": "How did p1_mtta_min change from 2022 Q1 to 2025 Q4?",
+  "expected_route": "tabular",
+  "actual_route": "tabular",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "eda3494e-4e7c-4ead-a33c-7b6dbe6170c8",
+  "latency_ms": 31437.05,
+  "response": "Here's the breakdown of the `p1_mtta_min` changes from 2022 Q1 to 2025 Q4, based on the provided data:\n\n*   **2022 Q1:** 31\n*   **2022 Q2:** 29\n*   **2022 Q3:** 28\n*   **2022 Q4:** 27\n*   **2023 Q1:** 26\n*   **2023 Q2:** 25\n*   **2023 Q3:** 24\n*   **2023 Q4:** 23\n*   **2024 Q1:** 22\n*   **2024 Q2:** 21\n*   **2024 Q3:** 20\n*   **2024 Q4:** 19\n*   **2025 Q1:** 18\n*   **2025 Q2:** 17\n*   **2025 Q3:** 16\n*   **2025 Q4:** 15\n\n**Overall Trend:** `p1_mtta_min` decreased steadily from 31 in 2022 Q1 to 15 in 2025 Q4. It reduced by 16 over the period.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}

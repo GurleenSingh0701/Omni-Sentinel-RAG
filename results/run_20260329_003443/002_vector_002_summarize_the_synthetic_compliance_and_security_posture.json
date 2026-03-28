@@ -1,0 +1,16 @@
+{
+  "index": 2,
+  "id": "vector_002",
+  "category": "vector",
+  "query": "Summarize the synthetic compliance and security posture.",
+  "expected_route": "vector",
+  "actual_route": "vector",
+  "route_ok": true,
+  "status": "ok",
+  "request_id": "8f8979e3-88d9-459c-bddf-9d10963b3b00",
+  "latency_ms": 20832.99,
+  "response": "Here’s a summary of Omni-Sentinel Analytics’ synthetic compliance and security posture based on the provided context:\n\nOmni-Sentinel employs a robust, layered approach to security and compliance, designed for an enterprise environment. Key aspects include:\n\n*   **Zero-Trust Internal Access:** A core principle with strict access controls.\n*   **Identity Management:** Utilizing SSO (Single Sign-On) combined with SCIM (System for Cross-domain Identity Management) provisioning for streamlined user management.\n*   **Role-Based Access Control (RBAC):** Granular workspace controls via RBAC, allowing for fine-grained permissioning.\n*   **Immutable Audit Trails:** Comprehensive, immutable audit trails track all administrative actions for accountability and compliance monitoring.\n*   **Data Encryption:** Data is protected at rest using AES-256 encryption and in transit with TLS 1.2+ protocols.\n\nFurthermore, the company demonstrates a commitment to operational support through:\n\n*   **24x5 Global Support:** Round-the-clock global support coverage with weekend critical escalation procedures.\n*   **Tiered Escalation:** Defined escalation tiers (P1, P2, P3) ensuring timely responses based on severity.\n*   **High SLA Compliance:** A strong support SLA compliance rate of 99.3%.\n\n**Important Note:** All these details are synthetic and intended solely for testing purposes within the Omni-Sentinel RAG development environment. The data is intentionally small and does not represent a real production system.",
+  "verification_confidence": 0.0,
+  "unsupported_claims": [],
+  "error": ""
+}
