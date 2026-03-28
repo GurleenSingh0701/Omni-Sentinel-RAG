@@ -1,0 +1,16 @@
+year,quarter,segment,active_customers,new_logos,expansion_mrr_usd_k,churn_rate_pct,nps_score
+2022,Q1,SMB,280,34,48,4.9,41
+2022,Q1,Mid-Market,162,19,72,4.2,44
+2022,Q1,Enterprise,96,11,103,3.8,47
+2022,Q4,SMB,318,39,57,4.6,43
+2022,Q4,Mid-Market,181,22,86,3.9,46
+2022,Q4,Enterprise,109,13,121,3.4,50
+2023,Q4,SMB,356,44,64,4.1,46
+2023,Q4,Mid-Market,203,25,96,3.5,49
+2023,Q4,Enterprise,127,16,138,3.1,53
+2024,Q4,SMB,402,51,78,3.8,50
+2024,Q4,Mid-Market,231,29,109,3.2,53
+2024,Q4,Enterprise,149,19,156,2.8,56
+2025,Q4,SMB,448,56,92,3.4,54
+2025,Q4,Mid-Market,264,33,125,2.9,57
+2025,Q4,Enterprise,173,22,179,2.5,60

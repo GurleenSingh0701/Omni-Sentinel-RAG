@@ -1,9 +1,11 @@
 import os
+import csv
 import json
 import re
 import time
 from datetime import datetime, timezone
 from dataclasses import dataclass
+from pathlib import Path
 from uuid import uuid4
 from typing import TypedDict
 from dotenv import load_dotenv
@@ -52,6 +54,9 @@ class AppConfig:
     tabular_keywords: tuple[str, ...]
     startup_healthcheck: bool
     fallback_response: str
+    vector_context_file: str
+    tabular_data_file: str
+    tabular_data_files: tuple[str, ...]
     enable_eval_stub_llm: bool
     max_query_chars: int
     enable_input_sanitization: bool
@@ -67,6 +72,17 @@ class AppConfig:
     def from_env() -> "AppConfig":
         raw_keywords = os.getenv("TABULAR_KEYWORDS", "revenue,table,data,numbers")
         parsed_keywords = tuple(k.strip().lower() for k in raw_keywords.split(",") if k.strip())
+        default_tabular_catalog = (
+            "data/revenue.csv",
+            "data/incidents.csv",
+            "data/customers.csv",
+        )
+        raw_tabular_files = os.getenv("TABULAR_DATA_FILES", "")
+        parsed_tabular_files = tuple(
+            item.strip() for item in raw_tabular_files.split(",") if item.strip()
+        )
+        default_tabular_file = os.getenv("TABULAR_DATA_FILE", "data/revenue.csv")
+        final_tabular_files = parsed_tabular_files or default_tabular_catalog
 
         return AppConfig(
             lmstudio_model=os.getenv("LMSTUDIO_MODEL", "local-model"),
@@ -81,6 +97,9 @@ class AppConfig:
                 "FALLBACK_RESPONSE",
                 "I could not reach the local model server. Please verify LM Studio is running and try again.",
             ),
+            vector_context_file=os.getenv("VECTOR_CONTEXT_FILE", "docs/company_overview.txt"),
+            tabular_data_file=default_tabular_file,
+            tabular_data_files=final_tabular_files,
             enable_eval_stub_llm=_env_bool("ENABLE_EVAL_STUB_LLM", False),
             max_query_chars=max(256, _env_int("MAX_QUERY_CHARS", 5000)),
             enable_input_sanitization=_env_bool("ENABLE_INPUT_SANITIZATION", True),
@@ -135,6 +154,48 @@ def _redact_obj(value: object) -> object:
     if isinstance(value, list):
         return [_redact_obj(v) for v in value]
     return value
+
+
+def _read_text_file(path_str: str) -> str:
+    path = Path(path_str)
+    if not path.exists():
+        return ""
+    try:
+        return path.read_text(encoding="utf-8").strip()
+    except Exception:
+        return ""
+
+
+def _csv_to_markdown_table(path_str: str) -> str:
+    path = Path(path_str)
+    if not path.exists():
+        return ""
+
+    try:
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            rows = list(csv.reader(handle))
+    except Exception:
+        return ""
+
+    if not rows or not rows[0]:
+        return ""
+
+    headers = [cell.strip() for cell in rows[0]]
+    data_rows = [[cell.strip() for cell in row] for row in rows[1:] if row]
+
+    header_line = "| " + " | ".join(headers) + " |"
+    divider_line = "|" + "|".join(["---"] * len(headers)) + "|"
+    body_lines = ["| " + " | ".join(row) + " |" for row in data_rows]
+
+    return "\n".join([header_line, divider_line, *body_lines])
+
+
+def _format_table_section(path_str: str) -> str:
+    table = _csv_to_markdown_table(path_str)
+    if not table:
+        return ""
+    title = Path(path_str).stem.replace("_", " ").title()
+    return f"### {title}\n{table}"
 
 
 def log_event(event: str, request_id: str | None = None, **fields: object) -> None:
@@ -206,14 +267,27 @@ def semantic_router(state: AgentState):
     return {"decision": "vector"}
 
 def vector_fetcher(state: AgentState):
-    """Simulates high-density vector retrieval."""
+    """Fetches semantic context from a text file with safe fallback."""
     log_event("vector_fetcher.start", request_id=state.get("request_id", ""))
-    return {"context": "User manual states that Omni-Sentinel is a localized RAG agent."}
+    context = _read_text_file(settings.vector_context_file)
+    if not context:
+        context = "User manual states that Omni-Sentinel is a localized RAG agent."
+    return {"context": context}
 
 def table_fetcher(state: AgentState):
-    """Simulates structured data extraction."""
+    """Fetches structured context from one or more CSV files and formats markdown tables."""
     log_event("table_fetcher.start", request_id=state.get("request_id", ""))
-    return {"context": "| Quarter | Revenue |\n|---|---|\n| Q3 | $4.2M |\n| Q4 | $5.1M |"}
+    sections = [
+        _format_table_section(path_str)
+        for path_str in settings.tabular_data_files
+    ]
+    sections = [section for section in sections if section]
+
+    if not sections:
+        fallback_table = "| Quarter | Revenue |\n|---|---|\n| Q3 | $4.2M |\n| Q4 | $5.1M |"
+        return {"context": fallback_table}
+
+    return {"context": "\n\n".join(sections)}
 
 
 def _safe_float(value: object, default: float = 0.0) -> float:

@@ -1,0 +1,77 @@
+Omni-Sentinel Analytics is a synthetic example company used for local RAG development and internal testing workflows.
+
+Company profile:
+- Domain: AI-powered security intelligence platform
+- Headquarters: Bengaluru, India
+- Regional offices: Singapore, Frankfurt, Toronto
+- Deployment model: on-prem, private cloud, and hybrid managed service
+- Core product: Omni-Sentinel RAG assistant for documentation and reporting
+- Product suite:
+	- Sentinel Core (query routing and answer synthesis)
+	- Sentinel TableOps (tabular analytics and KPI extraction)
+	- Sentinel Watchtower (incident triage copilot)
+	- Sentinel Trace (observability and audit reporting)
+
+Business segments:
+- Enterprise SOC teams
+- Financial services risk operations
+- Managed security service providers
+- Public sector digital forensics units
+
+Operational highlights:
+- The platform routes qualitative questions to semantic retrieval.
+- The platform routes quantitative questions to tabular extraction.
+- This repository uses file-backed synthetic context to avoid real company data leakage.
+- Verification mode can score claim support confidence from context.
+- Guardrails mode limits numeric responses to known tabular values.
+
+Synthetic KPI summary (testing-only values):
+- FY2025 annual recurring revenue (ARR): 18.4M USD
+- FY2025 net revenue retention: 112%
+- FY2025 gross margin: 71%
+- FY2025 average deal size: 142k USD
+- FY2025 logo churn: 4.8%
+- FY2025 average onboarding time: 17 days
+- FY2025 support SLA compliance: 99.3%
+
+Go-to-market and pricing (synthetic):
+- Standard: 48k USD per year, up to 40 analyst seats
+- Professional: 96k USD per year, up to 120 analyst seats
+- Enterprise: custom pricing with private deployment and audit controls
+- Add-ons:
+	- Advanced compliance pack: 22k USD per year
+	- Premium support: 18k USD per year
+	- Data residency bundle: 15k USD per year
+
+Security and compliance posture (synthetic):
+- Zero-trust internal access policy
+- SSO + SCIM provisioning support
+- RBAC with fine-grained workspace controls
+- Immutable audit trails for admin actions
+- Encryption:
+	- at rest: AES-256
+	- in transit: TLS 1.2+
+
+Support operations (synthetic):
+- Coverage: 24x5 global support, weekend critical escalation
+- Escalation tiers:
+	- P1: initial response in 30 minutes
+	- P2: initial response in 2 hours
+	- P3: initial response in 8 business hours
+- Typical monthly ticket volume: 850 to 1,050
+
+Roadmap themes (synthetic):
+- Agentic workflow templates for SOC runbooks
+- Policy-aware retrieval controls for regulated datasets
+- Better multilingual retrieval for APAC and EMEA teams
+- Native dashboard exports for finance and compliance reviews
+
+Known constraints in this demo repository:
+- Data is intentionally synthetic and small relative to real production corpora.
+- Revenue and KPI values are synthetic and intended only for testing.
+- Replace this file and CSV data with approved internal documentation before production rollout.
+
+Risk and compliance notes:
+- No real customer records are stored in this demo dataset.
+- No secrets, API tokens, or regulated identifiers should be committed.
+- Use redaction and sanitization toggles in `.env` during test runs.

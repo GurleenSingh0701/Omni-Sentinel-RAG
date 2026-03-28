@@ -17,22 +17,22 @@
   {
     "query": "What was the Q4 revenue?",
     "expected_route": "tabular",
-    "expected_any_contains": ["Q4", "5.1", "$5.1M"]
+    "expected_any_contains": ["Q4", "5.1", "5.8", "revenue"]
   },
   {
     "query": "Show revenue numbers by quarter.",
     "expected_route": "tabular",
-    "expected_any_contains": ["Q3", "Q4", "4.2", "5.1"]
+    "expected_any_contains": ["Q3", "Q4", "4.2", "5.1", "5.8"]
   },
   {
     "query": "Which table data is available?",
     "expected_route": "tabular",
-    "expected_any_contains": ["Quarter", "Revenue", "Q3", "Q4"]
+    "expected_any_contains": ["quarter", "revenue", "year", "Q4"]
   },
   {
     "query": "Provide the data from the revenue table.",
     "expected_route": "tabular",
-    "expected_any_contains": ["table", "Revenue", "Q4"]
+    "expected_any_contains": ["table", "revenue", "Q4", "year"]
   },
   {
     "query": "How does the system choose retrieval path?",
@@ -47,6 +47,6 @@
   {
     "query": "What numbers are present in the data?",
     "expected_route": "tabular",
-    "expected_any_contains": ["Q3", "Q4", "4.2", "5.1"]
+    "expected_any_contains": ["Q3", "Q4", "4.2", "5.1", "5.8"]
   }
 ]

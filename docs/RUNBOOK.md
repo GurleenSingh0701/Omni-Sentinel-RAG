@@ -7,11 +7,25 @@
 - Smoke test: `uv run python main.py smoke_test`
 - API server: `uv run uvicorn api:app --host 0.0.0.0 --port 8000`
 
+## Synthetic Data Catalog
+
+- Semantic source: `docs/company_overview.txt`
+- Tabular sources:
+  - `data/revenue.csv`
+  - `data/incidents.csv`
+  - `data/customers.csv`
+
+Environment keys:
+- `VECTOR_CONTEXT_FILE`
+- `TABULAR_DATA_FILE` (legacy single-file compatibility)
+- `TABULAR_DATA_FILES` (preferred multi-table mode)
+
 ## Troubleshooting
 
 - Health check fails:
   - Verify LM Studio server is running.
   - Verify `LMSTUDIO_BASE_URL` and `LMSTUDIO_MODEL`.
+  - Verify data files exist and env paths are correct.
 - Latency high:
   - Tune model size.
   - Reduce retries.

@@ -15,6 +15,28 @@ The project is optimized for:
 3. Synthesizes a final response with optional quality and guardrail layers.
 4. Exposes both CLI and API surfaces for development and deployment.
 
+## Data Source Model
+
+This project now uses file-backed synthetic data by default:
+
+1. Semantic context file: `docs/company_overview.txt`
+2. Tabular context catalog:
+    - `data/revenue.csv`
+    - `data/incidents.csv`
+    - `data/customers.csv`
+
+Synthetic data currently includes:
+
+- Rich company narrative context (products, pricing, compliance, KPIs, roadmap)
+- Multi-year quarterly revenue rows (2022 to 2025)
+- Multi-year incident operations dataset (`critical_incidents`, `p1_mtta_min`, `p1_mttr_min`)
+- Customer segment dataset (`active_customers`, `new_logos`, `churn_rate_pct`, `nps_score`)
+- Additional business metrics (`new_customers`, `renewal_rate_pct`, `operating_margin_pct`, `support_sla_pct`)
+
+The graph stays unchanged. Only the fetchers read from files instead of hardcoded strings.
+
+You can safely replace these files with your own company-approved datasets later.
+
 ## Architecture
 
 ### ASCII Component Diagram
@@ -30,6 +52,8 @@ The project is optimized for:
                                                                                                 v                                         v
                                                                      +-----------------------+                 +-----------------------+
                                                                      |   Vector Fetch Node   |                 |   Table Fetch Node    |
+                                                                     | company_overview.txt  |                 | revenue/incidents/    |
+                                                                     |                       |                 | customers CSV catalog |
                                                                      +-----------+-----------+                 +-----------+-----------+
                                                                                              |                                         |
                                                                                              +-------------------+---------------------+
@@ -66,7 +90,7 @@ graph TD
         U[User Query] --> S[Sanitize + Bound Input]
         S --> R{Semantic Router}
         R -->|vector| V[Vector Fetcher]
-        R -->|tabular| T[Table Fetcher]
+    R -->|tabular| T[Table Fetcher Catalog]
         V --> G[Generator]
         T --> G
         G --> Q[Verification Optional]
@@ -82,8 +106,13 @@ Omni-Sentinel-RAG/
     api.py                      # FastAPI wrapper
     main.py                     # CLI commands (run, health_check, smoke_test)
     baseline_prompts.json       # baseline test set
+    data/                       # synthetic tabular files (CSV)
+    data/revenue.csv            # synthetic finance metrics
+    data/incidents.csv          # synthetic incident operations metrics
+    data/customers.csv          # synthetic customer segment metrics
     .github/workflows/          # CI pipeline (regression + docs lint)
     docs/                       # documentation hub
+    docs/company_overview.txt   # synthetic semantic context source
     .env.example                # runtime configuration template
     Dockerfile                  # containerized API runtime
 ```
@@ -110,6 +139,9 @@ Set required values in `.env`:
 LMSTUDIO_BASE_URL=http://127.0.0.1:1234/v1
 LMSTUDIO_API_KEY=lm-studio
 LMSTUDIO_MODEL=<your-loaded-model-id>
+VECTOR_CONTEXT_FILE=docs/company_overview.txt
+TABULAR_DATA_FILE=data/revenue.csv
+TABULAR_DATA_FILES=data/revenue.csv,data/incidents.csv,data/customers.csv
 ```
 
 ### Install Dependencies
@@ -168,6 +200,11 @@ docker run -p 8000:8000 --env-file .env omni-sentinel-rag
 - `API_RATE_LIMIT_ENABLED`
 - `API_RATE_LIMIT_REQUESTS`
 - `API_RATE_LIMIT_WINDOW_SECONDS`
+
+### Data Source Paths
+- `VECTOR_CONTEXT_FILE`
+- `TABULAR_DATA_FILE`
+- `TABULAR_DATA_FILES` (preferred multi-table mode)
 
 ## Evaluation and CI
 
