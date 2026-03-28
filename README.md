@@ -233,6 +233,8 @@ Use the docs folder for complete operational and architectural documentation:
 - `docs/MODEL_COMPATIBILITY.md`
 - `docs/ONBOARDING_30MIN.md`
 - `docs/INCIDENT_RESPONSE.md`
+- `docs/SAMPLE_QUERIES.md`
+- `data/README.md`
 
 ## Production Notes
 

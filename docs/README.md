@@ -9,6 +9,7 @@ This folder contains project documentation for architecture, operations, onboard
 - [Model Compatibility](MODEL_COMPATIBILITY.md)
 - [30-Minute Onboarding](ONBOARDING_30MIN.md)
 - [Incident Response](INCIDENT_RESPONSE.md)
+- [Sample Queries](SAMPLE_QUERIES.md)
 
 ## Synthetic Dataset Files
 
