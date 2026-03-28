@@ -1,0 +1,15 @@
+{
+  "total_cases": 10,
+  "passed_cases": 10,
+  "runtime_errors": 0,
+  "success_rate": 100.0,
+  "route_accuracy": 100.0,
+  "content_check_pass_rate": 100.0,
+  "avg_latency_ms": 6.56,
+  "p95_latency_ms": 10.42,
+  "thresholds": {
+    "min_route_accuracy": 100.0,
+    "min_success_rate": 100.0,
+    "max_p95_ms": 2000.0
+  }
+}

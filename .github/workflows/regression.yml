@@ -1,0 +1,55 @@
+name: regression
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  smoke-route-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Sync dependencies
+        run: uv sync
+
+      - name: Run route regression smoke test
+        env:
+          ENABLE_EVAL_STUB_LLM: "true"
+          LLM_MAX_RETRIES: "0"
+          LLM_TIMEOUT_SECONDS: "2"
+        run: |
+          uv run python main.py smoke_test \
+            --route-only \
+            --min-route-accuracy 100 \
+            --min-success-rate 100 \
+            --max-p95-ms 1000 \
+            --report-file eval_report.json
+
+      - name: Upload evaluation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval_report.json
+
+  docs-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint markdown docs
+        uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: |
+            **/*.md
